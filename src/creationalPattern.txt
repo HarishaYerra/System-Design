@@ -1,0 +1,149 @@
+I’ll prepare a README-style interview notes file for you using the 🍕 Pizza example across all Creational Design Patterns (Singleton, Factory Method, Abstract Factory, Builder, Prototype).
+
+🍕 Creational Design Patterns – Interview Prep (README)
+1. Singleton Pattern
+
+Concept:
+Ensure only one instance of a class exists and provide a global access point.
+
+Real-world analogy:
+
+Only one Pizza Oven in the kitchen. Everyone uses the same oven.
+
+Java Example:
+
+Logger, DBConnection, Spring ApplicationContext (a singleton bean by default).
+
+When to use:
+
+Shared resource (cache, config, DB connection).
+
+Code Snippet:
+
+class PizzaOven {
+    private static PizzaOven oven = null;
+    private PizzaOven() {}
+    public static PizzaOven getInstance() {
+        if (oven == null) oven = new PizzaOven();
+        return oven;
+    }
+}
+
+2. Factory Method Pattern
+
+Concept:
+Define an interface for creating an object, but let subclasses decide which class to instantiate.
+
+Real-world analogy:
+
+Pizza Store → Customers order pizza, but store decides which pizza object (Veg/Chicken) to create.
+
+Java Example:
+
+Calendar.getInstance(), DriverManager.getConnection().
+
+When to use:
+
+When the object type is determined at runtime.
+
+Code Snippet:
+
+abstract class Pizza {
+    abstract void prepare();
+}
+class VegPizza extends Pizza { void prepare() { System.out.println("Veg Pizza"); } }
+class ChickenPizza extends Pizza { void prepare() { System.out.println("Chicken Pizza"); } }
+
+class PizzaFactory {
+    static Pizza getPizza(String type) {
+        if ("veg".equalsIgnoreCase(type)) return new VegPizza();
+        else return new ChickenPizza();
+    }
+}
+
+3. Abstract Factory Pattern
+
+Concept:
+Factory of factories → Create families of related objects.
+
+Real-world analogy:
+
+Pizza Store chain → Each branch (Italian branch, New York branch) produces its own pizza + drink combo.
+
+Java Example:
+
+javax.xml.parsers.DocumentBuilderFactory.
+
+In Spring: BeanFactory.
+
+When to use:
+
+When you need products that belong to a family (like UI components for Windows vs Mac).
+
+Code Snippet:
+
+interface Pizza { void prepare(); }
+class ItalianVegPizza implements Pizza { public void prepare(){ System.out.println("Italian Veg Pizza"); } }
+class NYVegPizza implements Pizza { public void prepare(){ System.out.println("NY Veg Pizza"); } }
+
+interface PizzaFactory { Pizza createPizza(); }
+class ItalianPizzaFactory implements PizzaFactory { public Pizza createPizza(){ return new ItalianVegPizza(); } }
+class NYPizzaFactory implements PizzaFactory { public Pizza createPizza(){ return new NYVegPizza(); } }
+
+4. Builder Pattern
+
+Concept:
+Construct a complex object step by step, without messy constructors.
+
+Real-world analogy:
+
+Pizza builder → You can add cheese, toppings, sauce step by step, then build final pizza.
+
+Java Example:
+
+StringBuilder, Stream.Builder().
+
+In Spring: UriComponentsBuilder.
+
+When to use:
+
+When objects have many optional fields or step-by-step creation.
+
+Code Snippet:
+
+class Pizza {
+    private String size, cheese, topping;
+    private Pizza(PizzaBuilder b) { this.size=b.size; this.cheese=b.cheese; this.topping=b.topping; }
+    static class PizzaBuilder {
+        String size, cheese, topping;
+        PizzaBuilder(String size){ this.size=size; }
+        PizzaBuilder addCheese(String c){ this.cheese=c; return this; }
+        PizzaBuilder addTopping(String t){ this.topping=t; return this; }
+        Pizza build(){ return new Pizza(this); }
+    }
+}
+
+5. Prototype Pattern
+
+Concept:
+Create new objects by cloning existing ones, instead of creating from scratch.
+
+Real-world analogy:
+
+Copying a pizza order → Instead of asking customer again, just duplicate the previous order.
+
+Java Example:
+
+Object.clone(), Spring Bean Prototype Scope.
+
+When to use:
+
+When object creation is expensive (e.g., database-heavy or complex configuration).
+
+Code Snippet:
+
+class PizzaOrder implements Cloneable {
+    String type;
+    PizzaOrder(String type){ this.type=type; }
+    public PizzaOrder clone(){ return new PizzaOrder(type); }
+}
