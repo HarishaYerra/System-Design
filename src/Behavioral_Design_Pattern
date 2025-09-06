@@ -1,0 +1,46 @@
+Behavioral Design Patterns
+==========================
+
+Concept:
+Behavioral patterns deal with communication between objects — how they interact, assign responsibilities, and collaborate.
+
+📋 List of Behavioral Patterns (11 total from GoF)
+
+Chain of Responsibility – Pass a request along a chain until someone handles it.
+
+Command – Encapsulate a request as an object (undo/redo).
+
+Interpreter – Define grammar for a language and interpret expressions.
+
+Iterator – Provide sequential access to elements without exposing internal structure.
+
+Mediator – Define an object to centralize communication between objects.
+
+Memento – Save and restore an object’s state (undo checkpoints).
+
+Observer – Notify multiple objects automatically when state changes (pub-sub).
+
+State – Allow an object to alter its behavior when its internal state changes.
+
+Strategy – Define a family of algorithms, encapsulate them, and make them interchangeable.
+
+Template Method – Define the skeleton of an algorithm, deferring steps to subclasses.
+
+Visitor – Represent an operation to be performed on elements of an object structure.
+
+🍕 Pizza-based Quick Analogies
+==============================
+
+Strategy: Choosing how to cook pizza (wood-fired, oven, pan).
+
+Observer: Customers get notified when pizza is ready.
+
+Command: Waiter takes your pizza order as a command object and delivers it later.
+
+State: Pizza order can be in Placed → Preparing → Baking → Delivered.
+
+Mediator: Waiter mediates between customer and kitchen.
+
+Memento: Save recipe steps and restore if customer wants previous version.
+
+Template Method: Define steps to make pizza, but subclasses decide details.
