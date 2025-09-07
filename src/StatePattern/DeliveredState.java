@@ -1,5 +1,8 @@
 package StatePattern;
 
-public class DeliveredState {
-
+public class DeliveredState implements OrderState {
+    @Override
+    public void handleRequest() {
+        System.out.println("Order has been delivered.");
+    }
 }
