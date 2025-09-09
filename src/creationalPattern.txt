@@ -1,7 +1,7 @@
 I’ll prepare a README-style interview notes file for you using the 🍕 Pizza example across all Creational Design Patterns (Singleton, Factory Method, Abstract Factory, Builder, Prototype).
 
 🍕 Creational Design Patterns – Interview Prep (README)
-1. Singleton Pattern
+1.Singleton Pattern
 
 Concept:
 Ensure only one instance of a class exists and provide a global access point.
