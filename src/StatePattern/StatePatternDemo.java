@@ -1,5 +1,6 @@
 package StatePattern;
 
+//StatePatternDemo
 public class StatePatternDemo {
     public static void main(String[] args) {
         OrderContext order = new OrderContext();
@@ -15,5 +16,7 @@ public class StatePatternDemo {
 
         order.setState(new DeliveredState());
         order.processOrder();
+        
+        
     }
 }
