@@ -3,6 +3,6 @@ package StatePattern;
 public class DeliveredState implements OrderState {
     @Override
     public void handleRequest() {
-        System.out.println("Order has been delivered.");
+        System.out.println("Order has been delivered");
     }
 }
