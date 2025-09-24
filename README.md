@@ -1,60 +1,70 @@
-Design Patterns in Java – Pizza Example
-
-This repository demonstrates 23 GoF Design Patterns implemented in Java using simple Pizza/Order examples.
-The goal is to learn patterns in a practical way that’s easy to connect with real-world scenarios.
+Design Patterns in Java 
 
 📖 What are Design Patterns?
 
 Design patterns are proven solutions to common software design problems.
 They provide a reusable template for solving recurring challenges in object-oriented design.
 
+🏗 Creational Patterns
+    These deal with object creation.
+
+    factorypattern
+    abstractfactorypattern
+    SingletonPattern
+    BuilderPattern
+    PrototypePattern
+    
+🧩 Structural Patterns
+    These deal with class/object composition.
+
+    AdapterPattern
+    BridgePattern
+    CompositePattern
+    DecoratorPattern
+    FacadePattern
+    FlyweightPattern
+    ProxyPattern
+
+🎭 Behavioral Patterns
+    These deal with object interaction & responsibility delegation.
+
+    ChainOfResponsibilityPattern
+    CommandPattern
+    MementoPattern
+    ObserverPattern
+    StatePattern
+    Strategy_Pattern
+    TemplatePattern
+
 1️⃣ Creational Patterns
+    These deal with object creation mechanisms.
 
-These deal with object creation mechanisms.
+    ✅ Factory Method
+          Concept: Define an interface for creating an object, but let subclasses decide which class to instantiate.
+          Analogy: Pizza Store → Customer orders "Veg Pizza" or "Cheese Pizza"
+          Java Example: PizzaFactory creates different pizzas.
+          Use Case: When you don’t know which class object you’ll need at runtime.
 
-✅ Factory Method
+    ✅ Abstract Factory
+          Concept: Provides an interface for creating families of related objects without specifying their concrete classes.
+          Analogy: Italian Pizza Factory vs Indian Pizza Factory (each provides Veg & Non-Veg pizzas).
+          Use Case: When you need to create related objects that should be used together.
 
-Concept: Define an interface for creating an object, but let subclasses decide which class to instantiate.
+    ✅ Singleton
+          Concept: Ensure only one instance of a class exists in the application.
+          Analogy: Only one Pizza Oven in the kitchen.
+          Java Example: PizzaOven.getInstance()
+          Use Case: Database connections, config managers, logging.
 
-Analogy: Pizza Store → Customer orders "Veg Pizza" or "Cheese Pizza".
+    ✅ Builder
+          Concept: Separates construction of a complex object from its representation.
+          Analogy: PizzaBuilder → Step by step add base, cheese, toppings.
+          Use Case: When object has many optional configurations.
 
-Java Example: PizzaFactory creates different pizzas.
-
-Use Case: When you don’t know which class object you’ll need at runtime.
-
-✅ Abstract Factory
-
-Concept: Provides an interface for creating families of related objects without specifying their concrete classes.
-
-Analogy: Italian Pizza Factory vs Indian Pizza Factory (each provides Veg & Non-Veg pizzas).
-
-Use Case: When you need to create related objects that should be used together.
-
-✅ Singleton
-
-Concept: Ensure only one instance of a class exists in the application.
-
-Analogy: Only one Pizza Oven in the kitchen.
-
-Java Example: PizzaOven.getInstance()
-
-Use Case: Database connections, config managers, logging.
-
-✅ Builder
-
-Concept: Separates construction of a complex object from its representation.
-
-Analogy: PizzaBuilder → Step by step add base, cheese, toppings.
-
-Use Case: When object has many optional configurations.
-
-✅ Prototype
-
-Concept: Clone existing objects instead of creating new ones.
-
-Analogy: Copy an existing Pizza order as a template for another.
-
-Use Case: Performance optimization, cloning large objects.
+    ✅ Prototype
+          Concept: Clone existing objects instead of creating new ones.
+          Analogy: Copy an existing Pizza order as a template for another.
+          Use Case: Performance optimization, cloning large objects.
 
 2️⃣ Structural Patterns
 
